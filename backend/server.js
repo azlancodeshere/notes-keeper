@@ -24,16 +24,13 @@ app.get("/", (req, res) => {
 })
 
 
-app.get("/sum",(req,res)=>{
+const PORT = process.env.PORT || 3000
 
-    const {a,b} = req.query;
 
-    const c = Number(a) + Number(b)
-
-    return res.send(`the sum of c is: ${c}`)
-})
 
 connectDb()
 
 
-app.listen(5000)
+app.listen(PORT, ()=>{
+    console.log(`Server is running on Port ${PORT}`)
+})
