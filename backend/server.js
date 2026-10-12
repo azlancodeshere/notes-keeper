@@ -4,6 +4,7 @@ import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
 import dotenv from "dotenv"
+import connectDb from "./db/db.js"
 
 
 
@@ -32,6 +33,7 @@ app.get("/sum",(req,res)=>{
     return res.send(`the sum of c is: ${c}`)
 })
 
+connectDb()
 
 
 app.listen(5000)
