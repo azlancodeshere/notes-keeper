@@ -162,7 +162,7 @@ const registerUser = async (req, res) => {
             refreshToken
         } = await generateAccessAndRefreshTokens(user._id);
 
-        console.log("ACCESS TOKEN:", accessToken);
+       
 console.log("REFRESH TOKEN:", refreshToken);
 
         // Cookie options for localhost development
