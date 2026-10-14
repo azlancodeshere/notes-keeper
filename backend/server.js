@@ -5,7 +5,8 @@ import cookieParser from "cookie-parser"
 import dotenv from "dotenv"
 import connectDb from "./db/db.js"
 import userRoutes from "./src/routes/user.routes.js";
-
+import folderRoutes from "./src/routes/folder.routes.js";
+import noteRoutes from "./src/routes/note.routes.js";
 
 
 dotenv.config()
@@ -31,6 +32,8 @@ app.get("/", (req, res) => {
 })
 
 app.use("/api/users", userRoutes);
+app.use("/api/folders", folderRoutes);
+app.use("/api/notes", noteRoutes);
 
 
 const PORT = process.env.PORT || 3000

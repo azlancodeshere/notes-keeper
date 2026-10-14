@@ -156,7 +156,7 @@ const registerUser = async (req, res) => {
             );
         }
 
-        // Generate access and refresh tokens
+       
         const {
             accessToken,
             refreshToken
@@ -165,7 +165,7 @@ const registerUser = async (req, res) => {
        
 console.log("REFRESH TOKEN:", refreshToken);
 
-        // Cookie options for localhost development
+       
         const options = {
             httpOnly: true,
             secure: false,
