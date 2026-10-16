@@ -14,4 +14,3 @@ jobs:
         run: |
           curl -fsS --max-time 90 --retry 3 --retry-delay 10 \
             https://notes-keeper-4fw6.onrender.com/ > /dev/null
- 
