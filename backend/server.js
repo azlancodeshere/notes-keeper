@@ -1,4 +1,4 @@
-import "dotenv/config"; 
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -10,14 +10,18 @@ import aiRoutes from "./src/routes/ai.routes.js";
 
 const app = express();
 
+app.set("trust proxy", 1);
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://notes-keeper-silk.vercel.app",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
 
 app.use(
   cors({
-   origin: ["http://localhost:5173" ,
-   "https://notes-keeper-8xmv02m5y-azlancodesheres-projects.vercel.app",
-    ],
-     credentials: true,
+    origin: allowedOrigins,
+    credentials: true,
   })
 );
 
