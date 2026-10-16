@@ -4,6 +4,8 @@ import { ApiResponse } from "../../utils/ApiResponse.js";
 import jwt from "jsonwebtoken";
  
 
+const isProd = process.env.NODE_ENV === "production";
+
  
 const cookieOptions = {
     httpOnly: true,
